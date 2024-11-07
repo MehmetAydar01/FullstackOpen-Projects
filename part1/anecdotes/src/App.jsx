@@ -28,7 +28,7 @@ const App = () => {
   ];
 
   const [selected, setSelected] = useState(0);
-  const [points, setPoints] = useState(Array(anecdotes.length).fill(0));
+  const [points, setPoints] = useState(anecdotes.map(_ => 0));
 
   const nextAnecdote = () => {
     const randomNumber = Math.floor(Math.random() * anecdotes.length);
