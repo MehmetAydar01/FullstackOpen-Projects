@@ -1,7 +1,5 @@
 import { useState } from 'react';
 
-
-
 const StatisticLine = ({ label, value }) => {
   return (
     <tr>
