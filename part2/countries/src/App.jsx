@@ -14,7 +14,7 @@ function App() {
   const filteredCountries = countries.filter((country) => {
     return country.name.common
       .toLowerCase()
-      .includes(searchValue.toLowerCase());
+      .includes(searchValue.toLocaleLowerCase());
   });
 
   useEffect(() => {
