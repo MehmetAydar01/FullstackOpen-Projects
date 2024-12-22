@@ -62,10 +62,16 @@ const App = () => {
       updatePerson();
     } else {
       // A POST request is made to the server.
-      personService.createPerson(newPerson).then((returnedPerson) => {
-        setPersons(persons.concat(returnedPerson));
-        setSuccessMessage(`Added ${returnedPerson.name}`);
-      });
+      personService
+        .createPerson(newPerson)
+        .then((returnedPerson) => {
+          setPersons(persons.concat(returnedPerson));
+          setSuccessMessage(`Added ${returnedPerson.name}`);
+        })
+        .catch((err) => {
+          console.log(err.response.data.error);
+          setErrorMessage(err.response.data.error);
+        });
     }
 
     setTimeout(() => {
